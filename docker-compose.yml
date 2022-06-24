@@ -1,0 +1,16 @@
+version: '3'
+services:
+  nodejs-fluentbit:
+    build: .
+    command: npm start
+    ports:
+      - "8080:8080"
+    depends_on:
+      - fluent-bit
+  fluent-bit:
+    image: fluent/fluent-bit:1.5
+    command: /fluent-bit/bin/fluent-bit -c /fluent-bit/etc/fluent-bit.conf
+    volumes:
+      - ./fluent_bit.conf:/fluent-bit/etc/fluent-bit.conf
+    ports:
+      - "5170:5170"

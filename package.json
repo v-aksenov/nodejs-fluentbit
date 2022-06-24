@@ -1,0 +1,13 @@
+{
+  "name": "nodejs-fluentbit",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "http": "^0.0.1-security",
+    "winston": "^3.8.0",
+    "winston-tcp": "^3.0.0"
+  }
+}
